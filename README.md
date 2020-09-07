@@ -155,7 +155,7 @@ No known bugs at this time.
 
 ## Authors
 Melkin Andres - [Github](https://github.com/melandres8) / [Twitter](https://twitter.com/melandres8)  
-Juan Sebastian Bueno - [Github](https://github.com/untalsebastianb) / [Twitter](https://twitter.com/untalsebastiab)
+Juan Sebastian Bueno - [Github](https://github.com/untalsebastianb) / [Twitter](https://twitter.com/untalsebastianb)
 
 Second part of Airbnb: Joann Vuong
 ## License
