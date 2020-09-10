@@ -59,7 +59,7 @@ def post_place(city_id):
         return abort(404)
     if request.is_json:
         if 'user_id' not in data:
-            return jsonify({'error': 'Missing user_id'}), 400 
+            return jsonify({'error': 'Missing user_id'}), 400
         user_object = storage.get(User, data['user_id'])
         if not user_object.__class__.__name__ == 'User':
             return abort(404)
