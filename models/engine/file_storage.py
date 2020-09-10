@@ -71,15 +71,22 @@ class FileStorage:
 
     def get(self, cls, id):
         """ Method to retrieve an object """
-        key_tofind = '{}.{}'.format(cls.__name__, id)
-        is_find = 0
-        objects_dict = self.all(cls)
-        if objects_dict:
-            for value in objects_dict.values():
-                if value.id == id:
-                    is_find = 1
-                    break
-        return(value if is_find == 1 else "None")
+        # key_tofind = '{}.{}'.format(cls.__name__, id)
+        # is_find = 0
+        # objects_dict = self.all(cls)
+        # if objects_dict:
+        #     for value in objects_dict.values():
+        #         if value.id == id:
+        #             is_find = 1
+        #             break
+        # return(value if is_find == 1 else "None")
+        all_classes = classes[cls.__name__]
+        if all_classes is None:
+            return None
+        for value in self.all(all_classes).values():
+            if value.id == id:
+                return value
+        return None
 
     def count(self, cls=None):
         """Count number of objects by class"""
