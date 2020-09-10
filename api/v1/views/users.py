@@ -49,9 +49,9 @@ def post_users():
     """ ADD users """
     if request.is_json:
         data = request.get_json()
-        if not 'email' in data:
+        if 'email' not in data:
             result = jsonify({'error': 'Missing email'}), 400
-        elif not 'password' in data:
+        elif 'password' not in data:
             result = jsonify({'password': 'Missing password'}), 400
         else:
             new_object = User(**data)
