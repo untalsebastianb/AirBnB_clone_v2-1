@@ -150,6 +150,152 @@ EOF  all  create  destroy  help  quit  show  update
 (hbnb) quit
 ```
 
+# API
+We create a public API.
+In this API you can ask for:
+
+* Cities
+* States
+* Places
+* Reviews
+* Users
+* Amenities
+
+```
+Entry point: http://0.0.0.0:5000/api/v1
+```
+
+## Available State methods
+Usage:
+```
+ ✹ Retrieves the list of all State objects: GET /api/v1/statesGET /api/v1/states
+
+ ✹ Retrieves a State object: GET /api/v1/states/<state_id>
+
+ ✹ Deletes a State object:: DELETE /api/v1/states/<state_id>
+
+ ✹ Creates a State: POST /api/v1/states
+
+ ✹ Updates a State object: PUT /api/v1/states/<state_id>
+
+
+Example:
+
+curl -X GET http://0.0.0.0:5000/api/v1/states/
+[
+  {
+    "__class__": "State", 
+    "created_at": "2017-04-14T00:00:02", 
+    "id": "8f165686-c98d-46d9-87d9-d6059ade2d99", 
+    "name": "Louisiana", 
+    "updated_at": "2017-04-14T00:00:02"
+  }, 
+  {
+    "__class__": "State", 
+    "created_at": "2017-04-14T16:21:42", 
+    "id": "1a9c29c7-e39c-4840-b5f9-74310b34f269", 
+    "name": "Arizona", 
+    "updated_at": "2017-04-14T16:21:42"
+  }, 
+...
+
+
+
+```
+## Available City methods
+Usage:
+```
+ ✹ Retrieves the list of all City objects of a State: GET /api/v1/states/<state_id>/cities
+
+ ✹ Retrieves a City object. : GET /api/v1/cities/<city_id>
+
+ ✹ Deletes a City object: DELETE /api/v1/cities/<city_id>
+
+ ✹ Creates a City: POST /api/v1/states/<state_id>/cities
+
+ ✹ Updates a City object: PUT /api/v1/cities/<city_id>
+
+Example:
+curl -X GET http://0.0.0.0:5000/api/v1/states/2b9a4627-8a9e-4f32-a752-9a84fa7f4efd/cities
+[
+  {
+    "__class__": "City", 
+    "created_at": "2017-03-25T02:17:06", 
+    "id": "1da255c0-f023-4779-8134-2b1b40f87683", 
+    "name": "New Orleans", 
+    "state_id": "2b9a4627-8a9e-4f32-a752-9a84fa7f4efd", 
+    "updated_at": "2017-03-25T02:17:06"
+  }
+...
+
+```
+
+## Available Amenity methods
+Usage:
+```
+
+ ✹ Retrieves the list of all Amenity objects: GET /api/v1/amenities
+
+ ✹ Retrieves a Amenity object: GET /api/v1/amenities/<amenity_id>
+
+ ✹ Deletes a Amenity object:: DELETE /api/v1/amenities/<amenity_id>
+
+ ✹ Creates a Amenity: POST /api/v1/amenities
+
+ ✹ Updates a Amenity object: PUT /api/v1/amenities/<amenity_id>
+
+```
+
+## Available User methods
+Usage:
+```
+
+ ✹ Retrieves the list of all User objects: GET /api/v1/users
+
+ ✹ Retrieves a User object: GET /api/v1/users/<user_id>
+
+ ✹ Deletes a User object: DELETE /api/v1/users/<user_id>
+
+ ✹ Creates a User: POST /api/v1/users
+
+ ✹ Updates a User object: PUT /api/v1/users/<user_id>
+
+```
+
+## Available Place methods
+Usage:
+```
+
+ ✹ Retrieves the list of all Place objects of a City: GET /api/v1/cities/<city_id>/places
+
+ ✹ Retrieves a Place object. : GET /api/v1/places/<place_id>
+
+ ✹ Deletes a Place object: DELETE /api/v1/places/<place_id>
+
+ ✹ Creates a Place: POST /api/v1/cities/<city_id>/places
+
+ ✹ Updates a Place object: PUT /api/v1/places/<place_id>
+
+```
+
+## Available Review methods
+Usage:
+```
+
+ ✹ Retrieves the list of all Review objects of a Place: GET /api/v1/places/<place_id>/reviews
+
+ ✹ Retrieves a Review object. : GET /api/v1/reviews/<review_id>
+
+ ✹ Deletes a Review object: DELETE /api/v1/reviews/<review_id>
+
+ ✹ Creates a Review: POST /api/v1/places/<place_id>/reviews
+
+ ✹ Updates a Review object: PUT /api/v1/reviews/<review_id>
+
+```
+
+
+
 ## Bugs
 No known bugs at this time. 
 
